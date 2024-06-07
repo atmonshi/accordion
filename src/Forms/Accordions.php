@@ -43,7 +43,7 @@ class Accordions extends Component
 
     public function accordions(array | Closure $accordions): static
     {
-        $this->childComponents($accordions);
+        $this->childComponents(array_filter($accordions));
 
         return $this;
     }
