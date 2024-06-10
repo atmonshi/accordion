@@ -11,6 +11,18 @@
         id: $id('accordion'),
         @if($isIsolated) activeAccordion: 'accordion-{{ $activeAccordion }}', @endif
     }"
+
+    :x-on:form-validation-error.window="
+        $nextTick(() => {
+            let error = $el.querySelector('[data-validation-error]');
+
+            if (! error) {
+                return
+            }
+
+            setActiveAccordion($id('accordion'));
+        })
+    "
     class="fi-accordion-item group"
 >
     <button
