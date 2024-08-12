@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://larazeus.com"><img src="https://larazeus.com/images/lara-zeus-accordion.png" /></a>
+<a href="https://larazeus.com"><img src="https://larazeus.com/images/lara-zeus-accordion.webp" /></a>
 </p>
 
 <h4 align="center">Group forms component in an Accordion layout.</h4>
@@ -21,7 +21,7 @@
 
 ## Screenshots
 
-![](https://larazeus.com/images/screenshots/accordion/accordion-1.png)
+![](https://larazeus.com/images/screenshots/accordion/accordion-1.webp)
 
 ## Demo
 

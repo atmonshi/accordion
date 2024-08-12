@@ -11,8 +11,8 @@ Group forms component in an Accordion layout
 
 ## Screenshots
 
-![](https://larazeus.com/images/screenshots/accordion/accordion-1.png)
-![](https://larazeus.com/images/screenshots/accordion/cover.png)
+![](https://larazeus.com/images/screenshots/accordion/accordion-1.webp)
+![](https://larazeus.com/images/screenshots/accordion/cover.webp)
 
 ## More Details
 **✨ to learn more about Accordion, please visit:**
