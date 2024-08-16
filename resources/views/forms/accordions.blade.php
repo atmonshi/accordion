@@ -1,3 +1,9 @@
+@php
+    $isIsolated = $isIsolated();
+    $isSlidable = $isSlidable();
+    $getActiveAccordion = $getActiveAccordion();
+@endphp
+
 <div
     wire:ignore.self
     x-cloak
@@ -10,17 +16,12 @@
             ->merge($getExtraAttributes(), escape: false)
             ->merge($getExtraAlpineAttributes(), escape: false)
             ->class([
-                'rounded-xl bg-white shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10',
+               $isSlidable ? '' : 'rounded-xl bg-white shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10',
             ])
     }}
 >
 
-    @php
-        $isIsolated = $isIsolated();
-        $getActiveAccordion = $getActiveAccordion();
-    @endphp
-
-    <x-zeus-accordion::accordion :activeAccordion="$getActiveAccordion">
+    <x-zeus-accordion::accordion :activeAccordion="$getActiveAccordion" :isSlidable="$isSlidable">
         @foreach ($getChildComponentContainer()->getComponents() as $accordion)
             <x-zeus-accordion::accordion.item
                     :label="$accordion->getLabel()"
@@ -28,6 +29,7 @@
                     :badge="$accordion->getBadge()"
                     :badge-color="$accordion->getBadgeColor()"
                     :isIsolated="$isIsolated"
+                    :isSlidable="$isSlidable"
                     :activeAccordion="$getActiveAccordion">
                 {{ $accordion }}
             </x-zeus-accordion::accordion.item>
