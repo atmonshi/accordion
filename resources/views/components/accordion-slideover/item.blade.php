@@ -36,7 +36,7 @@
 
     }"
 
-    class="rounded-lg ring-1 ring-gray-950/10 dark:ring-white/20 fi-accordion-item group">
+    class="rounded-xl ring-1 ring-gray-950/10 dark:ring-white/20 fi-accordion-item group">
 
     <div class="flex gap-4 items-center justify-between w-full p-4 text-start select-none">
 
