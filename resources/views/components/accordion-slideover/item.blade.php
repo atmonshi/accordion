@@ -1,6 +1,5 @@
 @props([
     'activeAccordion' => 1,
-    'isIsolated' => false,
     'onlyOne' => false,
     'icon' => null,
     'label' => '',
@@ -10,8 +9,7 @@
 
 <div
     x-data="{
-        id: $id('accordion'),
-        @if($isIsolated) activeAccordion: 'accordion-{{ $activeAccordion }}', @endif
+        id: $id('accordion')
     }"
 
     :x-on:form-validation-error.window="
