@@ -6,7 +6,7 @@ use Closure;
 
 trait CanBeSlided
 {
-    protected bool | Closure $isSlidable = true;
+    protected bool | Closure $isSlidable = false;
     protected string | Closure $slideDirection = 'right';
 
     public function slide(string | null $slideDirection = null): static
