@@ -14,7 +14,7 @@
         }
     }"
 
-    class="fi-accordion relative w-full mx-auto overflow-hidden flex flex-col gap-y-4"
+    class="fi-accordion w-full flex flex-col gap-y-4"
 >
     {{ $slot }}
 </div>
