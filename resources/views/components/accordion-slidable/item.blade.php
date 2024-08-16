@@ -1,7 +1,6 @@
 @props([
     'activeAccordion' => 1,
     'isIsolated' => false,
-    'isSlidable' => false,
     'onlyOne' => false,
     'icon' => null,
     'label' => '',
@@ -10,11 +9,6 @@
 ])
 
 <div
-
-    @class([
-       ($isSlidable ? 'rounded-lg ring-1 ring-gray-950/10 dark:ring-white/20' : ''),
-      ])
-
     x-data="{
         id: $id('accordion'),
         @if($isIsolated) activeAccordion: 'accordion-{{ $activeAccordion }}', @endif
@@ -42,13 +36,9 @@
 
     }"
 
-    class="fi-accordion-item group">
+    class="rounded-lg ring-1 ring-gray-950/10 dark:ring-white/20 fi-accordion-item group">
 
-    <div
-        @class([
-        ($isSlidable ? 'flex gap-2 items-center' : ''),
-       ])
-    >
+    <div class="flex gap-2 items-center">
 
         <div x-show="onlyOne">
             <button type="button"
@@ -68,33 +58,14 @@
                 type="button"
 
                 @click="()=> {
-
                     if (!onlyOne) {
                         setActiveAccordion(id);
                     }
-
                 }"
                 class="flex items-center justify-between w-full p-4 text-start select-none"
 
-                @if(!$isSlidable)
-                :class="{
-                    'bg-gray-100 dark:bg-gray-800': activeAccordion == id,
-                    'bg-white dark:bg-gray-800/50': activeAccordion != id,
-                 }"
-                @endif
         >
-            <span
-                @if(!$isSlidable)
-                :class="{
-                    'text-primary-600 dark:text-primary-500': activeAccordion == id ,
-                    'text-gray-500 dark:text-white/70': activeAccordion != id
-                }"
-                @endif
-                @class([
-                    'flex gap-2 font-medium items-center justify-center',
-                    ($isSlidable ? '' : 'text-gray-500 group-hover:text-primary-600')
-                ])
-            >
+            <span class="flex gap-2 font-medium items-center justify-center">
                 @if ($icon !== null)
                     <x-filament::icon
                         :icon="$icon"
@@ -109,19 +80,16 @@
                     </x-filament::badge>
                 @endif
             </span>
-            <span :class="{ 'rotate-180': activeAccordion == id }">
-                @if($isSlidable)
-                    @svg('heroicon-m-chevron-right','w-4 h-4 duration-200 ease-out')
-                @else
-                    @svg('heroicon-m-chevron-down','w-4 h-4 duration-200 ease-out')
-                @endif
+            <span x-show="activeAccordion !== id">
+                 @svg('heroicon-m-chevron-right','w-4 h-4 duration-200 ease-out')
             </span>
         </button>
 
     </div>
 
 
-    <div class="p-4" x-show="activeAccordion == id" x-collapse x-cloak>
+    <div class="p-4">
         {{ $slot }}
     </div>
+    
 </div>

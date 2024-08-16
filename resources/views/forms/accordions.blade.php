@@ -21,7 +21,25 @@
     }}
 >
 
-    <x-zeus-accordion::accordion :activeAccordion="$getActiveAccordion" :isSlidable="$isSlidable">
+    @if ($isSlidable)
+
+        <x-zeus-accordion::accordion-slidable :activeAccordion="$getActiveAccordion">
+            @foreach ($getChildComponentContainer()->getComponents() as $accordion)
+                <x-zeus-accordion::accordion-slidable.item
+                    :label="$accordion->getLabel()"
+                    :icon="$accordion->getIcon()"
+                    :badge="$accordion->getBadge()"
+                    :badge-color="$accordion->getBadgeColor()"
+                    :isIsolated="$isIsolated"
+                    :activeAccordion="$getActiveAccordion">
+                    {{ $accordion }}
+                </x-zeus-accordion::accordion-slidable.item>
+            @endforeach
+        </x-zeus-accordion::accordion-slidable>
+
+    @else
+
+    <x-zeus-accordion::accordion :activeAccordion="$getActiveAccordion">
         @foreach ($getChildComponentContainer()->getComponents() as $accordion)
             <x-zeus-accordion::accordion.item
                     :label="$accordion->getLabel()"
@@ -29,10 +47,12 @@
                     :badge="$accordion->getBadge()"
                     :badge-color="$accordion->getBadgeColor()"
                     :isIsolated="$isIsolated"
-                    :isSlidable="$isSlidable"
                     :activeAccordion="$getActiveAccordion">
                 {{ $accordion }}
             </x-zeus-accordion::accordion.item>
         @endforeach
     </x-zeus-accordion::accordion>
+
+    @endif
+
 </div>
