@@ -1,6 +1,6 @@
 @php
     $isIsolated = $isIsolated();
-    $isSlidable = $isSlidable();
+    $isSlideOver = $isSlideOver();
     $getActiveAccordion = $getActiveAccordion();
 @endphp
 
@@ -16,16 +16,16 @@
             ->merge($getExtraAttributes(), escape: false)
             ->merge($getExtraAlpineAttributes(), escape: false)
             ->class([
-               $isSlidable ? '' : 'rounded-xl bg-white shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10',
+               $isSlideOver ? '' : 'rounded-xl bg-white shadow-sm ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10',
             ])
     }}
 >
 
-    @if ($isSlidable)
+    @if ($isSlideOver)
 
-        <x-zeus-accordion::accordion-slidable :activeAccordion="$getActiveAccordion">
+        <x-zeus-accordion::accordion-slideover :activeAccordion="$getActiveAccordion">
             @foreach ($getChildComponentContainer()->getComponents() as $accordion)
-                <x-zeus-accordion::accordion-slidable.item
+                <x-zeus-accordion::accordion-slideover.item
                     :label="$accordion->getLabel()"
                     :icon="$accordion->getIcon()"
                     :badge="$accordion->getBadge()"
@@ -33,9 +33,9 @@
                     :isIsolated="$isIsolated"
                     :activeAccordion="$getActiveAccordion">
                     {{ $accordion }}
-                </x-zeus-accordion::accordion-slidable.item>
+                </x-zeus-accordion::accordion-slideover.item>
             @endforeach
-        </x-zeus-accordion::accordion-slidable>
+        </x-zeus-accordion::accordion-slideover>
 
     @else
 

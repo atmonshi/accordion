@@ -6,32 +6,32 @@ use Closure;
 
 trait CanBeSlided
 {
-    protected bool | Closure $isSlidable = false;
-    protected string | Closure $slideDirection = 'right';
+    protected bool | Closure $isSlideOver = false;
+    protected string | Closure $slideOverDirection = 'right';
 
-    public function slide(string | null $slideDirection = null): static
+    public function slideOver(string | null $slideOverDirection = null): static
     {
-        $this->isSlidable = true;
+        $this->isSlideOver = true;
 
-        if ($slideDirection) {
-            $this->slideDirection = $slideDirection;
+        if ($slideOverDirection) {
+            $this->slideOverDirection = $slideOverDirection;
         }
 
         return $this;
     }
 
-    public function slideRight()
+    public function slideOverRight()
     {
-        return $this->slide('right');
+        return $this->slideOver('right');
     }
 
-    public function slideLeft()
+    public function slideOverLeft()
     {
-        return $this->slide('left');
+        return $this->slideOver('left');
     }
 
-    public function isSlidable(): bool
+    public function isSlideOver(): bool
     {
-        return $this->evaluate($this->isSlidable);
+        return $this->evaluate($this->isSlideOver);
     }
 }

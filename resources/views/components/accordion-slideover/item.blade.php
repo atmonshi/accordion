@@ -42,7 +42,7 @@
 
         <button type="button" x-show="onlyOne"
                 class="group relative inline-block overflow-hidden rounded-full border border-gray-100 bg-gray-200 text-sm font-medium text-slate-800 hover:text-violet-600 focus:outline-none focus:ring active:bg-indigo-600 active:text-white"
-                x-on:click="backToOther()" 
+                x-on:click="backToOther()"
         >
             <span class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
             <span class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
