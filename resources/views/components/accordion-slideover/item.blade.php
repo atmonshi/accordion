@@ -25,13 +25,10 @@
     "
 
     x-show="()=> {
-
         if (onlyOne) {
             return activeAccordion == id;
         }
-
         return true;
-
     }"
 
     class="rounded-xl ring-1 ring-gray-950/10 dark:ring-white/20 fi-accordion-item group">
