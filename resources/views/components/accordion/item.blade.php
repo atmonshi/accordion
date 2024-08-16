@@ -1,11 +1,13 @@
 @props([
     'activeAccordion' => 1,
     'isIsolated' => false,
+    'onlyOne' => false,
     'icon' => null,
     'label' => '',
     'badge' => null,
     'badgeColor' => null,
 ])
+
 <div
     x-data="{
         id: $id('accordion'),
@@ -23,6 +25,17 @@
             setActiveAccordion($id('accordion'));
         })
     "
+
+    x-show="()=> {
+
+        if (onlyOne) {
+            return activeAccordion == id;
+        }
+
+        return true;
+
+    }"
+
     class="fi-accordion-item group"
 >
     <button
