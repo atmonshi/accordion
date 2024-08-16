@@ -10,6 +10,11 @@
 ])
 
 <div
+
+    @class([
+       ($isSlidable ? 'rounded-lg ring-1 ring-gray-950/10 dark:ring-white/20' : ''),
+      ])
+
     x-data="{
         id: $id('accordion'),
         @if($isIsolated) activeAccordion: 'accordion-{{ $activeAccordion }}', @endif
@@ -39,8 +44,11 @@
 
     class="fi-accordion-item group">
 
-
-    <div class="flex gap-2 items-center">
+    <div
+        @class([
+        ($isSlidable ? 'flex gap-2 items-center' : ''),
+       ])
+    >
 
         <div x-show="onlyOne">
             <button type="button"
@@ -59,24 +67,33 @@
         <button
                 type="button"
 
+                @click="()=> {
+
+                    if (!onlyOne) {
+                        setActiveAccordion(id);
+                    }
+
+                }"
                 class="flex items-center justify-between w-full p-4 text-start select-none"
 
                 @if(!$isSlidable)
-                    @click="setActiveAccordion(id)"
-                    :class="{
-                        'bg-gray-100 dark:bg-gray-800': activeAccordion == id,
-                        'bg-white dark:bg-gray-800/50': activeAccordion != id,
-                     }"
+                :class="{
+                    'bg-gray-100 dark:bg-gray-800': activeAccordion == id,
+                    'bg-white dark:bg-gray-800/50': activeAccordion != id,
+                 }"
                 @endif
-
-    ])
         >
             <span
+                @if(!$isSlidable)
                 :class="{
                     'text-primary-600 dark:text-primary-500': activeAccordion == id ,
                     'text-gray-500 dark:text-white/70': activeAccordion != id
                 }"
-                class="flex gap-2 font-medium items-center justify-center text-gray-500 group-hover:text-primary-600"
+                @endif
+                @class([
+                    'flex gap-2 font-medium items-center justify-center',
+                    ($isSlidable ? '' : 'text-gray-500 group-hover:text-primary-600')
+                ])
             >
                 @if ($icon !== null)
                     <x-filament::icon
@@ -96,7 +113,7 @@
                 @if($isSlidable)
                     @svg('heroicon-m-chevron-right','w-4 h-4 duration-200 ease-out')
                 @else
-                @svg('heroicon-m-chevron-down','w-4 h-4 duration-200 ease-out')
+                    @svg('heroicon-m-chevron-down','w-4 h-4 duration-200 ease-out')
                 @endif
             </span>
         </button>
