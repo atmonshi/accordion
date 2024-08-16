@@ -34,4 +34,10 @@ trait CanBeSlided
     {
         return $this->evaluate($this->isSlideOver);
     }
+
+    public function getSlideOverDirection()
+    {
+        return $this->evaluate($this->slideOverDirection);
+
+    }
 }

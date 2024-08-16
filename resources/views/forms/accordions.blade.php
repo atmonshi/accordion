@@ -2,6 +2,7 @@
     $isIsolated = $isIsolated();
     $isSlideOver = $isSlideOver();
     $getActiveAccordion = $getActiveAccordion();
+    $getSlideOverDirection = $getSlideOverDirection();
 @endphp
 
 <div
@@ -23,7 +24,7 @@
 
     @if ($isSlideOver)
 
-        <x-zeus-accordion::accordion-slideover :activeAccordion="$getActiveAccordion">
+        <x-zeus-accordion::accordion-slideover :slideOverDirection="$getSlideOverDirection" :activeAccordion="$getActiveAccordion">
             @foreach ($getChildComponentContainer()->getComponents() as $accordion)
                 <x-zeus-accordion::accordion-slideover.item
                     :label="$accordion->getLabel()"

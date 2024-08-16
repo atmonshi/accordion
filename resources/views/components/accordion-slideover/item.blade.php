@@ -39,7 +39,7 @@
 
     <div
         x-show="activeAccordion == id"
-        x-transition:enter="accordion-item-slide-right-active">
+        x-transition:enter="fi-accordion-item-slide">
 
         @include('zeus-accordion::components.accordion-slideover.item-header')
 
