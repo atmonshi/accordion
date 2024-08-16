@@ -6,10 +6,12 @@ use Closure;
 use Filament\Forms\Components\Component;
 use Filament\Support\Concerns;
 use LaraZeus\Accordion\Concerns\CanBeIsolated;
+use LaraZeus\Accordion\Concerns\CanBeSlided;
 
 class Accordions extends Component
 {
     use CanBeIsolated;
+    use CanBeSlided;
     use Concerns\HasExtraAlpineAttributes;
 
     protected string $view = 'zeus-accordion::forms.accordions';
