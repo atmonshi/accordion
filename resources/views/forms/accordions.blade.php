@@ -1,3 +1,7 @@
+@php
+    $isIsolated = $isIsolated();
+    $getActiveAccordion = $getActiveAccordion();
+@endphp
 <div
     wire:ignore.self
     x-cloak
@@ -14,21 +18,16 @@
             ])
     }}
 >
-
-    @php
-        $isIsolated = $isIsolated();
-        $getActiveAccordion = $getActiveAccordion();
-    @endphp
-
     <x-zeus-accordion::accordion :activeAccordion="$getActiveAccordion">
         @foreach ($getChildComponentContainer()->getComponents() as $accordion)
             <x-zeus-accordion::accordion.item
-                    :label="$accordion->getLabel()"
-                    :icon="$accordion->getIcon()"
-                    :badge="$accordion->getBadge()"
-                    :badge-color="$accordion->getBadgeColor()"
-                    :isIsolated="$isIsolated"
-                    :activeAccordion="$getActiveAccordion">
+                :label="$accordion->getLabel()"
+                :icon="$accordion->getIcon()"
+                :badge="$accordion->getBadge()"
+                :badge-color="$accordion->getBadgeColor()"
+                :isIsolated="$isIsolated"
+                :activeAccordion="$getActiveAccordion"
+            >
                 {{ $accordion }}
             </x-zeus-accordion::accordion.item>
         @endforeach
