@@ -6,7 +6,7 @@ weight: 1
 ## Introduction
 Group forms component in an Accordion layout
 
-**[Demo](https://demo.larazeus.com/admin/components-demo/accordion) · [Github](https://github.com/lara-zeus/accordion) · [Discord](#)**
+**[Demo](https://demo.larazeus.com/admin/components-demo/accordion) · [Github](https://github.com/lara-zeus/accordion) · [Discord](https://discord.com/channels/883083792112300104/1282751058015420528)**
 
 ## Features
 
@@ -24,6 +24,6 @@ Group forms component in an Accordion layout
 
 Available support channels:
 
-* Join our channel in discord [Discord](#)
+* Join our channel on [Discord](https://discord.com/channels/883083792112300104/1282751058015420528)
 * Open an issue on [GitHub](https://github.com/lara-zeus/accordion/issues)
 * Email us using the [contact center](https://larazeus.com/contact-us)

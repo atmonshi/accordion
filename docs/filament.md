@@ -17,7 +17,7 @@ Group forms component in an Accordion layout
 ## More Details
 **✨ to learn more about Accordion, please visit:**
 
-- [Discord](#)
+- [Discord](https://discord.com/channels/883083792112300104/1282751058015420528)
 - [Docs](https://larazeus.com/docs/accordion)
 - [Github](https://github.com/lara-zeus/accordion)
 - [Demo](https://demo.larazeus.com/admin/components-demo/accordion)
