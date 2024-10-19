@@ -7,6 +7,10 @@ weight: 4
 
 to use @zeus accordion in your forms:
 
+@blade
+<x-auto-screenshot name="accordion/accordion-form" alt="using accordion component in forms" />
+@endblade
+
 ```php
 \LaraZeus\Accordion\Forms\Accordions::make('Options')
     ->activeAccordion(2)
@@ -30,6 +34,10 @@ to use @zeus accordion in your forms:
 ## In Infolist
 
 to use @zeus accordion in your infolist:
+
+@blade
+<x-auto-screenshot name="accordion/accordion-infolist" alt="using accordion component in infolist" />
+@endblade
 
 ```php
 \LaraZeus\Accordion\Infolists\Accordions::make('Options')
